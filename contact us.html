@@ -1,24 +1,116 @@
-<link rel="stylesheet" href="contactstyle.css">
-<div class="container">
-    <form action="action_page.php">
-  
-      <label for="fname">First Name</label>
-      <input type="text" id="fname" name="firstname" placeholder="Your name..">
-  
-      <label for="lname">Last Name</label>
-      <input type="text" id="lname" name="lastname" placeholder="Your last name..">
-  
-      <label for="country">Country</label>
-      <select id="country" name="country">
-        <option value="australia">Australia</option>
-        <option value="canada">Canada</option>
-        <option value="usa">USA</option>
-      </select>
-  
-      <label for="subject">Subject</label>
-      <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
-  
-      <input type="submit" value="Submit">
-  
-    </form>
-  </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+  <script>
+    // Import the functions you need from the SDKs you need
+
+import { initializeApp } from "firebase/app";
+
+import { getAnalytics } from "firebase/analytics";
+
+// TODO: Add SDKs for Firebase products that you want to use
+
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+
+// Your web app's Firebase configuration
+
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+
+const firebaseConfig = {
+
+  apiKey: "AIzaSyDYcTjAnBblgpnEGlpla165zpm2w3o6I28",
+
+  authDomain: "project-viewlogging.firebaseapp.com",
+
+  databaseURL: "https://project-viewlogging-default-rtdb.firebaseio.com",
+
+  projectId: "project-viewlogging",
+
+  storageBucket: "project-viewlogging.firebasestorage.app",
+
+  messagingSenderId: "978279652347",
+
+  appId: "1:978279652347:web:7da487d31b4421dea5495e",
+
+  measurementId: "G-65GHH2CEFS"
+
+};
+
+
+// Initialize Firebase
+
+const app = initializeApp(firebaseConfig);
+
+const analytics = getAnalytics(app);
+  </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" 
+          content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" 
+          href="contactstyle.css">
+    <title>Contact us Page</title>
+</head>
+
+<body>
+    <!-- Header section -->
+    <header>
+        <button class="hamburger" id="hamburger-icon">
+            <span onclick="openNavbar()"> ☰</span>
+        </button>
+    </header>
+
+    <!-- banner section  -->
+    <section class="banner">
+        <img src=
+"https://media.geeksforgeeks.org/wp-content/uploads/20230822131732/images.png"
+            alt="Welcome to our Contact Us page">
+        <h1>Get in Touch With Us</h1>
+        <p>
+          We're here to answer any questions you may have.
+          </p>
+    </section>
+
+    <!-- Contact form -->
+    <section class="contact-form">
+        <div class="form-container">
+            <h2>Your Details</h2>
+            <form action="#" method="POST">
+
+                <label for="name">Name: </label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email: </label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="phone">Phone: </label>
+                <input type="tel" id="phone" name="phone">
+
+                <label for="message">Message: </label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+
+                <button type="submit" class="submit-button">Submit</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Company contact info -->
+    <section class="contact-info">
+        <h2>Contact Information</h2>
+        <address>
+            <br>
+            <br>
+            <br>
+            Phone: <a href="tel:971 55 5407 507">971 55 5407 507</a><br>
+            Email: <a href="chungulus2@gmail.com">chungulus2@gmail.com</a>
+        </address>
+    </section>
+
+    <!-- Footer section -->
+    <footer>
+        <p>
+          &copy;
+          </p>
+    </footer>

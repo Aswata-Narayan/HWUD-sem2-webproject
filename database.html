@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Video Thumbnails</title>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&family=Piazzolla&display=swap" rel="stylesheet">
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: 'Ubuntu', sans-serif;
+        background-color: #121212;
+        color: #00ff00; /* Neon green for hacker aesthetic */
+        background-image: url('https://www.transparenttextures.com/patterns/black-linen.png');
+        background-size: cover;
+        font-size: 16px;
+      }
+
+      .navbar {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: sticky;
+        top: 0;
+        padding: 15px;
+        background-color: #222;
+        border-bottom: 2px solid #00ff00; /* Neon green border */
+        box-shadow: 0px 4px 6px rgba(0, 255, 0, 0.1);
+      }
+
+      .nav-list {
+        width: 70%;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        list-style: none;
+      }
+
+      .nav-list li {
+        list-style: none;
+        padding: 10px;
+        transition: transform 0.3s ease;
+      }
+
+      .nav-list li:hover {
+        transform: translateY(-5px);
+        color: #00ff00; /* Hover effect with neon green */
+      }
+
+      .nav-list li a {
+        text-decoration: none;
+        color: #00ff00;
+        font-size: 18px;
+        font-weight: bold;
+      }
+
+      .nav-list li a:hover {
+        color: #ff1493; /* Neon pink hover effect */
+      }
+
+      .thumbnail-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        padding: 20px;
+        margin-top: 50px;
+      }
+
+      .thumbnail {
+        text-align: center;
+        margin-bottom: 15px;
+        position: relative;
+      }
+
+      .thumbnail img {
+        width: 250px;
+        height: 140px;
+        object-fit: cover;
+        border: 2px solid #00ff00;
+        border-radius: 8px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        cursor: pointer;
+        box-shadow: 0px 0px 10px rgba(0, 255, 0, 0.7);
+      }
+
+      .thumbnail img:hover {
+        transform: scale(1.1);
+        box-shadow: 0px 0px 20px rgba(0, 255, 0, 1);
+        filter: brightness(1.3);
+      }
+
+      .thumbnail img:active {
+        transform: scale(1.05);
+        box-shadow: 0px 0px 15px rgba(0, 255, 0, 0.9);
+      }
+
+      .text-footer {
+        text-align: center;
+        padding: 30px 0;
+        font-family: 'Ubuntu', sans-serif;
+        display: flex;
+        justify-content: center;
+        color: #00ff00; /* Neon green text */
+        font-size: 14px;
+      }
+
+      footer {
+        text-align: center;
+        padding: 15px;
+        background-color: #222;
+        border-top: 2px solid #00ff00; /* Neon green border */
+      }
+
+      #search {
+        box-sizing: border-box;
+        width: 70%;
+        padding: 8px;
+        font-size: 17px;
+        border: 2px solid #00ff00; /* Neon green border for search */
+        border-radius: 9px;
+        background-color: transparent;
+        color: #00ff00;
+        margin: 20px auto;
+        outline: none;
+        text-align: center;
+      }
+
+      #search:focus {
+        border: 2px solid #ff1493; /* Neon pink border when focused */
+        box-shadow: 0 0 10px #ff1493;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 5px;
+      }
+
+      @keyframes glitch {
+        0% {
+          text-shadow: 2px 0px 2px rgba(0, 255, 0, 0.8), -2px 0px 2px rgba(0, 255, 0, 0.8);
+        }
+        25% {
+          text-shadow: -2px 0px 2px rgba(0, 255, 0, 0.8), 2px 0px 2px rgba(0, 255, 0, 0.8);
+        }
+        50% {
+          text-shadow: 2px 0px 2px rgba(0, 255, 0, 0.8), -2px 0px 2px rgba(0, 255, 0, 0.8);
+        }
+        75% {
+          text-shadow: -2px 0px 2px rgba(0, 255, 0, 0.8), 2px 0px 2px rgba(0, 255, 0, 0.8);
+        }
+        100% {
+          text-shadow: 2px 0px 2px rgba(0, 255, 0, 0.8), -2px 0px 2px rgba(0, 255, 0, 0.8);
+        }
+      }
+
+      .glitch {
+        animation: glitch 1.5s infinite linear alternate-reverse;
+        font-weight: bold;
+        color: #00ff00;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+      }
+
+      h1, h2 {
+        font-family: 'Piazzolla', serif;
+        font-size: 3rem;
+        text-transform: uppercase;
+        color: #00ff00;
+        letter-spacing: 5px;
+      }
+
+      h1.glitch {
+        animation: glitch 1.5s infinite linear alternate-reverse;
+      }
+
+    </style>
+  </head>
+  <body>
+    <header class="navbar">
+    </header>
+
+    <section class="thumbnail-container">
+      <div class="thumbnail">
+        <a href="https://www.youtube.com/watch?v=yUaNHA-WQWg" target="_blank">
+          <img src="https://img.youtube.com/vi/yUaNHA-WQWg/0.jpg" alt="Thumbnail 1">
+        </a>
+      </div>
+
+      <div class="thumbnail">
+        <a href="https://www.youtube.com/watch?v=xuCn8ux2gbs" target="_blank">
+          <img src="https://img.youtube.com/vi/xuCn8ux2gbs/0.jpg" alt="Thumbnail 2">
+        </a>
+      </div>
+
+      <div class="thumbnail">
+        <a href="https://www.youtube.com/watch?v=tylNqtyj0gs" target="_blank">
+          <img src="https://img.youtube.com/vi/tylNqtyj0gs/0.jpg" alt="Thumbnail 3">
+        </a>
+      </div>
+
+      <div class="thumbnail">
+        <a href="https://www.youtube.com/watch?v=QDCcuCHOIyY" target="_blank">
+          <img src="https://img.youtube.com/vi/QDCcuCHOIyY/0.jpg" alt="Thumbnail 4">
+        </a>
+      </div>
+
+      <!-- New Thumbnails Added Below -->
+      <div class="thumbnail">
+        <a href="https://www.youtube.com/watch?v=F7iLfuci75Y" target="_blank">
+          <img src="https://img.youtube.com/vi/F7iLfuci75Y/0.jpg" alt="Thumbnail 5">
+        </a>
+      </div>
+
+      <div class="thumbnail">
+        <a href="https://www.youtube.com/watch?v=75ECu8GFLME" target="_blank">
+          <img src="https://img.youtube.com/vi/75ECu8GFLME/0.jpg" alt="Thumbnail 6">
+        </a>
+      </div>
+
+      <div class="thumbnail">
+        <a href="https://www.youtube.com/watch?v=jtwXiLblJtw" target="_blank">
+          <img src="https://img.youtube.com/vi/jtwXiLblJtw/0.jpg" alt="Thumbnail 7">
+        </a>
+      </div>
+
+      <div class="thumbnail">
+        <a href="https://www.youtube.com/watch?v=KND_bBDE8RQ" target="_blank">
+          <img src="https://img.youtube.com/vi/KND_bBDE8RQ/0.jpg" alt="Thumbnail 8">
+        </a>
+      </div>
+
+      <div class="thumbnail">
+        <a href="https://www.youtube.com/watch?v=HvKpnaXYUPU" target="_blank">
+          <img src="https://img.youtube.com/vi/HvKpnaXYUPU/0.jpg" alt="Thumbnail 9">
+        </a>
+      </div>
+
+      <div class="thumbnail">
+        <a href="https://www.youtube.com/watch?v=FRdeyrfhVIg" target="_blank">
+          <img src="https://img.youtube.com/vi/FRdeyrfhVIg/0.jpg" alt="Thumbnail 10">
+        </a>
+      </div>
+
+      <div class="thumbnail">
+        <a href="https://www.youtube.com/watch?v=5dseXhF8cCc" target="_blank">
+          <img src="https://img.youtube.com/vi/5dseXhF8cCc/0.jpg" alt="Thumbnail 11">
+        </a>
+      </div>
+
+      <div class="thumbnail">
+        <a href="https://www.youtube.com/watch?v=yt24N1Awu9E" target="_blank">
+          <img src="https://img.youtube.com/vi/yt24N1Awu9E/0.jpg" alt="Thumbnail 12">
+        </a>
+      </div>
+
+      <div class="thumbnail">
+        <a href="https://www.youtube.com/watch?v=TaG2zCVotxE" target="_blank">
+          <img src="https://img.youtube.com/vi/TaG2zCVotxE/0.jpg" alt="Thumbnail 13">
+        </a>
+      </div>
+
+      <div class="thumbnail">
+        <a href="https://www.youtube.com/watch?v=XFpwz_TZZZk" target="_blank">
+          <img src="https://img.youtube.com/vi/XFpwz_TZZZk/0.jpg" alt="Thumbnail 14">
+        </a>
+      </div>
+
+      <div class="thumbnail">
+        <a href="https://www.youtube.com/watch?v=pjoQdz0nxf4" target="_blank">
+          <img src="https://img.youtube.com/vi/pjoQdz0nxf4/0.jpg" alt="Thumbnail 15">
+        </a>
+      </div>
+
+      <div class="thumbnail">
+        <a href="https://www.youtube.com/watch?v=wwSzpaTHyS8" target="_blank">
+          <img src="https://img.youtube.com/vi/wwSzpaTHyS8/0.jpg" alt="Thumbnail 16">
+        </a>
+      </div>
+
+      <div class="thumbnail">
+        <a href="https://www.youtube.com/watch?v=r_ahZOgPTsk" target="_blank">
+          <img src="https://img.youtube.com/vi/r_ahZOgPTsk/0.jpg" alt="Thumbnail 17">
+        </a>
+      </div>
+
+      <div class="thumbnail">
+        <a href="https://www.youtube.com/watch?v=nzHY-muy2Mw" target="_blank">
+          <img src="https://img.youtube.com/vi/nzHY-muy2Mw/0.jpg" alt="Thumbnail 18">
+        </a>
+      </div>
+
+      <div class="thumbnail">
+        <a href="https://www.youtube.com/watch?v=EFkyxzJtiv4" target="_blank">
+          <img src="https://img.youtube.com/vi/EFkyxzJtiv4/0.jpg" alt="Thumbnail 19">
+        </a>
+      </div>
+
+      <div class="thumbnail">
+        <a href="https://www.youtube.com/watch?v=8oOZMY3g9KE" target="_blank">
+          <img src="https://img.youtube.com/vi/8oOZMY3g9KE/0.jpg" alt="Thumbnail 20">
+        </a>
+      </div>
+    </section>
+
+    <footer>
+      <p>All videos are hosted on YouTube.</p>
+    </footer>
+  </body>
+</html>

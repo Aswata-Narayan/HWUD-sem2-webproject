@@ -2,26 +2,33 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Courier New', Courier, monospace; /* Hacker font */
 }
 
 body {
-  font-family: Arial, sans-serif;
+  background-color: #000; /* Dark background for the whole page */
+  color: #00FF00; /* Green text color to mimic terminal look */
+  font-family: 'Courier New', Courier, monospace;
   line-height: 1.6;
 }
 
-/* Header styles */
+/* Topbar */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-  background-color: #333;
-  color: white;
+  background-color: #111; /* Dark background */
+  color: #00FF00; /* Neon green text */
   height: 4rem;
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.2);
+  border-bottom: 2px solid #00FF00; /* Neon green border */
 }
 
 .logo {
   font-size: 2rem;
+  color: #00FF00;
+  text-shadow: 0 0 5px #00FF00, 0 0 10px #00FF00; /* Glow effect */
 }
 
 nav {
@@ -38,39 +45,44 @@ nav ul li a {
   font-size: 1.2rem;
   padding: 1rem;
   text-decoration: none;
-  color: white;
+  color: #00FF00; /* Neon green text */
+  transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
 nav ul li a:hover {
-  background-color: #0dac30;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-.reachUs-button {
-  padding: 1rem;
-  background-color: #0dac30;
-  border: none;
-  color: white;
-  border-radius: 4px;
-  cursor: pointer;
-}
-.reachUs-button:hover{
-  background-color: #1ac840;
+  color: #FF00FF; /* Purple on hover */
+  text-shadow: 0 0 10px #FF00FF, 0 0 20px #FF00FF; /* Neon purple glow */
 }
 
-/* banner section styles */
+.reachUs-button {
+  padding: 1rem;
+  background-color: #00FF00;
+  border: none;
+  color: black;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.reachUs-button:hover {
+  background-color: #1ac840;
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.5); /* Soft green glow */
+}
+
 .banner {
   text-align: center;
-  background-color: #ffffff;
+  background-color: #222; /* Slightly lighter background */
   margin: 0 auto;
+  padding: 40px 0;
 }
 
 .banner img {
   max-width: 100%;
   height: auto;
+  border: 2px solid #00FF00; /* Neon green border around images */
 }
-/* Contact form styles */
+
 .contact-form {
   padding: 40px 0;
   margin: 0 10px;
@@ -79,15 +91,18 @@ nav ul li a:hover {
 .form-container {
   max-width: 40%;
   margin: 0 auto;
-  padding: 20px;
-  background-color: #ffffff;
+  padding: 30px;
+  background-color: #111;
   border-radius: 10px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.2);
 }
 
 .contact-form h2 {
   text-align: center;
   margin-bottom: 20px;
+  font-size: 2rem;
+  color: #00FF00;
+  text-shadow: 0 0 5px #00FF00, 0 0 10px #00FF00;
 }
 
 .form-group {
@@ -95,75 +110,136 @@ nav ul li a:hover {
 }
 
 .form-container label {
-  display:block;
+  display: block;
   font-weight: bold;
-}
-.form-container input, textarea{
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  margin-bottom: 1rem;
-  resize: vertical;
-}
-.submit-button {
-  padding: 10px 20px;
-  background-color: #0dac30;
-  border: none;
-  color: white;
-  border-radius: 4px;
   font-size: 1rem;
-  cursor: pointer;
+  color: #00FF00;
 }
 
-/* Contact info styles */
+.form-container input,
+.form-container textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #00FF00; /* Neon green border */
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  background-color: #333;
+  color: #00FF00;
+  font-size: 1rem;
+  resize: vertical;
+  transition: border-color 0.3s ease;
+}
+
+.form-container input:focus,
+.form-container textarea:focus {
+  border-color: #FF00FF; /* Purple border on focus */
+}
+
+.submit-button {
+  padding: 12px 25px;
+  background-color: #00FF00;
+  border: none;
+  color: black;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #1ac840;
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+}
+
 .contact-info {
   text-align: center;
   padding: 50px 0;
-  background-color: #f7f7f7;
+  background-color: #111;
 }
 
 .contact-info h2 {
   margin-bottom: 20px;
+  font-size: 2rem;
+  color: #00FF00;
+  text-shadow: 0 0 5px #00FF00, 0 0 10px #00FF00;
 }
 
-/* Footer styles */
 footer {
   padding: 20px;
   text-align: center;
-  background-color: #333;
-  color: white;
-}
-/* Hamburger styles */
-.hamburger {
-  display: none;
-  color: rgb(0, 0, 0);
-  font-size: 1.5rem;
-  cursor: pointer;
+  background-color: #000;
+  color: #00FF00;
+  border-top: 2px solid #00FF00; /* Neon green border */
+  font-size: 16px;
 }
 
-/* Media queries for responsiveness */
+footer .text-footer {
+  font-size: 16px;
+  color: #b3ffb3; /* Lighter green */
+  text-shadow: 0 0 5px #b3ffb3;
+}
+
+.hamburger {
+  display: none;
+  color: #00FF00;
+  font-size: 1.5rem;
+  cursor: pointer;
+  text-shadow: 0 0 5px #00FF00;
+}
+
 @media only screen and (max-width: 768px) {
   .logo {
-      display: none;
+    display: none;
   }
 
   .hamburger {
-      display: flex;
+    display: flex;
   }
 
   #nav-menu {
-      position: absolute;
-      top: 4rem;
-      left: 0;
-      background-color: #333;
-      width: 100%;
-      display: none;
+    position: absolute;
+    top: 4rem;
+    left: 0;
+    background-color: #333;
+    width: 100%;
+    display: none;
   }
 
   #nav-menu.active {
-      display: block;
-      flex-direction: row;
-      padding: 1rem;
+    display: block;
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  nav ul {
+    display: none;
+  }
+
+  nav ul li {
+    padding: 0.5rem 0;
+  }
+
+  nav ul li a {
+    font-size: 1.5rem;
+    padding: 1rem;
+    color: #00FF00;
+  }
+
+  .contact-form h2,
+  .contact-info h2 {
+    font-size: 1.5rem;
+  }
+
+  .submit-button,
+  .reachUs-button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .form-container {
+    max-width: 90%;
+    padding: 15px;
   }
 }

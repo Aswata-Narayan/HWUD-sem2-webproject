@@ -5,7 +5,6 @@
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
   <script>
-    
     const firebaseConfig = {
       apiKey: "AIzaSyDYcTjAnBblgpnEGlpla165zpm2w3o6I28",
       authDomain: "project-viewlogging.firebaseapp.com",
@@ -38,7 +37,6 @@
           phone: userPhone,
           message: userMessage
         }).then(() => {
-
           alert('Thank you for reaching out! We\'ll get back to you shortly.');
           contactForm.reset(); 
         }).catch((error) => {
@@ -58,12 +56,9 @@
 <body>
 
   <header>
-    <!-- Home button added inside the header -->
     <div class="logo">
-      <a href="index.html">Home</a> <!-- Navigate to home page -->
     </div>
     
-    <!-- Navigation links -->
     <button class="hamburger" id="hamburger-icon">
       <span onclick="openNavbar()">☰</span>
     </button>
@@ -107,8 +102,8 @@
   <section class="contact-info">
     <h2>Our Contact Info</h2>
     <address>
-      <p>Phone: <a href="tel:971555407507">971 55 5407 507</a></p>
-      <p>Email: <a href="mailto:chungulus2@gmail.com">chungulus2@gmail.com</a></p>
+      <p>Phone: <a href="tel:123 456 7890">123 456 7890</a></p>
+      <p>Email: <a href="mailto:ana4001@hw.ac.uk.com">ana4001@hw.ac.uk.com</a></p>
     </address>
   </section>
 
